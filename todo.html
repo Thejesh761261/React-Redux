@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <style>
+       ul {list-style-type: circle;}
+
+    </style>
+
+</head>
+<body>
+   
+    <div id="myDIV" class="header" style="text-align: center;">
+        <h2 style="margin:5px">My To Do List</h2>
+        <input type="text" id="myInput" placeholder="Title...">
+        <span onclick="add()" class="addBtn" id="add">Add</span>
+      </div>
+      <div class="container" style="columns: 2;">
+      <div style="margin-left: 300px;">
+        <h4>Todo</h4>
+      <ul id="myUL" >
+         
+        <li id="l1"></li>
+        <li id="l2"></li>
+        <li id="l3"></li>
+        <li id="l4"></li>
+        <li id="l5"></li>
+        
+      </ul>
+    </div>
+    <div >
+        <h4>Completed</h4>
+        <ul id="comp">
+          <li id="c1"></li>
+          <li id="c2"></li>
+          <li id="c3"></li>
+          
+        </ul>
+      </div>
+    </div>
+      <script>
+          localStorage.setItem("l1","Go to gym");
+          document.getElementById("l1").innerText=localStorage.getItem("l1")
+          localStorage.setItem("l2","Pay bills");
+          document.getElementById("l2").innerText=localStorage.getItem("l2")
+          localStorage.setItem("l3","Meet John");
+          document.getElementById("l3").innerText=localStorage.getItem("l3")
+          localStorage.setItem("l4","Buy grocery");
+          document.getElementById("l4").innerText=localStorage.getItem("l4")
+          localStorage.setItem("l5","Read a book");
+          document.getElementById("l5").innerText=localStorage.getItem("l5")
+          localStorage.setItem("c1","Go shopping");
+          document.getElementById("c1").innerText=localStorage.getItem("c1")
+          localStorage.setItem("c2","Meet Chris");
+          document.getElementById("c2").innerText=localStorage.getItem("c2")
+          localStorage.setItem("c3","join book Club");
+          document.getElementById("c3").innerText=localStorage.getItem("c3")
+
+            var i=6;
+            function add(){
+                alert(document.getElementById("add").value());
+                localStorage.setItem("l" + i++)=document.getElementsByClassName("addBtn").value;
+                i++;
+            }
+      </script>
+</body>
+</html>
